@@ -55,7 +55,7 @@ module.exports = function localStrategyConfig() {
   passport.use(
     new JWTstrategy(
       {
-        secretOrKey: 'TOP_SECRET',
+        secretOrKey: process.env.SECRET_OR_KEY,
         jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
       },
       async (token, done) => {
